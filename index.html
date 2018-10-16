@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+</head>
+
+<body>
+   <div ng-app="myApp" ng-init="count=20" ng-controller="myCtrl">
+      <p>Name :
+         <input type="text" ng-model="firstName" placeholder="Input you name">
+         <button ng-click="myFunc()">Change</button>
+      </p>
+      <h1>Hello {{firstName}} </h1>
+      <p><b>inti :</b> {{count *2}}</p>
+      <p><b>Show data after click change :</b> {{showData}}</p>
+
+      <p>Loop :</p>
+      <table border="1" width="500px">
+         <thead>
+            <th>No.</th>
+            <th>Name</th>
+            <th>Lastname</th>
+         </thead>
+         <tbody>
+            <tr ng-repeat="item in dataTable">
+               <td>{{$index}}</td>
+               <td>{{item.name}}</td>
+               <td>{{item.lastname}}</td>
+            </tr>
+         </tbody>
+      </table>
+
+      <p>Select : </p>
+      <select ng-model="selectModel">
+         <option ng-repeat="x in dataTable" value="{{x.name}}">{{x.name}} {{x.lastname}}</option>
+      </select>
+      <p>item selected : {{selectModel}}</p>
+   </div>
+</body>
+
+
+<script src="js/angular.js"></script>
+<script src="js/myAppCtrl.js"></script>
+<script>
+
+</script>
+
+</html>
